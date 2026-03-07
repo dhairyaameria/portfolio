@@ -1,497 +1,919 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dhairya Ameria Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhairya Ameria | AI/ML Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        integrity="sha512-yHk18rq57J9+O4TwjEYq44Ec8Hv1OyTX7G8xRCD1qv/MEcZfjA0U/mvNruSz09sNFR7yKRM/pVnpC1UuX8d7BA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
 <body>
-    <div class="content">
-        <div class="navbar">
-            <h1 class="navbar-name">Dhairya Ameria</h1>
-            <div class="theme-toggle">
-                <i class="fas fa-sun toggle-icon" id="light-icon"></i>
-                <label class="theme-toggle-label">
-                    <input type="checkbox" class="theme-toggle-checkbox" id="theme-toggle">
-                    <span class="toggle-slider"></span>
-                </label>
-                <i class="fas fa-moon toggle-icon" id="dark-icon"></i>
-            </div>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <nav class="nav">
+        <a href="#" class="nav-logo">DA</a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#publications">Research</a>
+            <a href="#spotlight">Achievements</a>
+            <a href="#contact">Contact</a> 
+            <!-- <a href="#contact" class="nav-cta">Contact</a> -->
         </div>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                <i class="fas fa-sun" id="theme-icon-light"></i>
+                <i class="fas fa-moon" id="theme-icon-dark"></i>
+            </button>
+            <button class="nav-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
 
-        <div class="header-content">
-
-            <div class="left-info">
-                <p class="about-me">I am a driven and passionate software engineer currently working at JPMorganChase
-                    with experience in developing robust full-stack applications, enhancing system scalability, and
-                    migrating infrastructure to cloud platforms. I have a strong foundation in privacy-preserving
-                    machine learning, especially federated learning, and have contributed to research in this domain
-                    with multiple publications. My career is built on combining technical expertise with a
-                    problem-solving mindset, enabling me to lead projects that integrate cutting-edge technologies with
-                    real-world applications.</p>
-                <p class="links">
-                    <a href="mailto:ameria9@seas.upenn.edu"><i class="fas fa-envelope"></i> ameria9@seas.upenn.edu</a>
-                    <!-- <a href="mailto:ameriadhairya@gmail.com"><i class="fas fa-envelope"></i> ameriadhairya@gmail.com</a> -->
-                    <a href="https://www.linkedin.com/in/dhairyaameria" target="_blank"><i class="fab fa-linkedin"></i>
-                        LinkedIn</a>
-                    <a href="https://github.com/dhairyaameria" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                    <a href="https://scholar.google.com/citations?user=b8-n9qIAAAAJ&hl=en&authuser=1" target="_blank"><i
-                            class="fas fa-graduation-cap"></i> Google Scholar</a>
+    <main>
+        <section class="hero" id="hero">
+            <div class="hero-bg">
+                <div class="hero-gradient"></div>
+                <div class="hero-grid"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    Looking for summer 2026 internships
+                </div>
+                <h1 class="hero-title">
+                    <span class="hero-line">Hi, I'm <span class="gradient-text">Dhairya</span></span>
+                    <span class="hero-line role-rotate">
+                        <span class="role-text">
+                            <span class="role">Software Developer</span>
+                            <span class="role">AI Researcher</span>
+                            <span class="role">Entrepreneur</span>
+                        </span>
+                    </span>
+                </h1>
+                <p class="hero-subtitle">
+                    Building privacy-preserving AI systems.
+                    <br>Master's student at <span class="highlight">Penn Engineering</span>.
                 </p>
-
-            </div>
-            <div class="photo">
-                <img src="assets/profile-photo.jpg" alt="Profile Photo" />
-            </div>
-        </div>
-
-        <div class="tabs">
-            <div class="tab-buttons">
-                <button class="tab-button active" onclick="showSection('education')">Education</button>
-                <button class="tab-button" onclick="showSection('experience')">Experience</button>
-                <button class="tab-button" onclick="showSection('projects')">Projects</button>
-                <button class="tab-button" onclick="showSection('skills')">Technical Skills</button>
-                <button class="tab-button" onclick="showSection('certifications')">Certifications</button>
-                <button class="tab-button" onclick="showSection('publications')">Publications</button>
-                <button class="tab-button" onclick="showSection('extracurricular')">Extracurricular</button>
-            </div>
-        </div>
-
-        <select class="tab-dropdown" onchange="showSection(this.value)">
-            <option value="education">Education</option>
-            <option value="experience">Experience</option>
-            <option value="projects">Projects</option>
-            <option value="skills">Technical Skills</option>
-            <option value="certifications">Certifications</option>
-            <option value="publications">Publications</option>
-            <option value="extracurricular">Extracurricular</option>
-        </select>
-
-        <div id="education" class="section active">
-            <h2>Education</h2>
-            <div class="card">
-                <h6>
-                    University of Pennsylvania, Philadelphia, USA
-                    <span>Incoming Aug 2025</span>
-                </h6>
-                <p>
-                    Master's of Science in Computer and Information Sciences
-                </p>
-            </div>
-            <div class="card">
-                <h6>
-                    K.J. Somaiya College of Engineering, Mumbai, India
-                    <span>Jun 2020 - May 2024</span>
-                </h6>
-                <p>
-                    Bachelor of Technology in Computer Engineering
-                    <span>CGPA: 9.41</span>
-                    <p><i>Courses: Database Technologies, Data Structures, Networks, Soft Computing, Operating Systems</i></p>
-                </p>
-            </div>
-            <!-- <div class="card">
-                <h6>
-                    Narayana Junior College, Mumbai, India
-                    <span>Jun 2018 - May 2020</span>
-                </h6>
-                <p>
-                    Higher Secondary Certificate
-                    <span>83.84%</span>
-                </p>
-            </div> -->
-        </div>
-
-        <div id="experience" class="section">
-            <h2>Experience</h2>
-
-            <div class="card">
-                <h6>JPMorganChase, Mumbai — Software Engineer <span>Aug 2024 - Present</span></h6>
-                <p>Leading application migration to AWS from on-premise infrastructure to improve scalability and reduce
-                    operational costs while managing decommissioning of legacy systems. Working on API integration with
-                    a new vendor, completing two-way endpoint testing and reconciliation process design, ensuring
-                    seamless vendor transition. Won 1st place in the internal hackathon Sepathon by building a Natural
-                    language to SQL generator using prompt engineering on large language models.</p>
-            </div>
-
-            <div class="card">
-                <h6>JPMorganChase, Mumbai — Software Engineer Intern <span> Jan 2024 - Jul 2024</span></h6>
-                <p>Implemented a new report and scheduler dashboard and enhanced the reporting module with API-level
-                    improvements, increasing data reporting efficiency. Conducted sessions on onboarding to internal LLM
-                    solutions for the department, organized regular Fun Friday sessions for team-building, and
-                    maintained coding best practices through peer code reviews. Successfully closed over 75 Jira stories
-                    and handled over 6 independent production releases.</p>
-            </div>
-
-            <div class="card">
-                <h6>Nasdaq, Bangalore — Software Development Intern <span>Aug 2023 - Dec 2023</span></h6>
-                <p>Collaborated with internal stakeholders and data teams to document the requirements and perform ETL
-                    transformations to map them to functional specifications for data warehousing processes. Utilized
-                    monthly snapshots of contract risk pipeline data over 2 years to conduct data analysis and modeling.
-                    Built a predictive model that can predict potential contract risk with the current state data in
-                    Salesforce.</p>
-            </div>
-
-            <div class="card">
-                <h6>Nasdaq, Bangalore — Software Development Intern (Summer) <span>Jun 2023 - Jul 2023</span></h6>
-                <p>Designed and created interactive dashboards using Salesforce CRM Analytics that provide stakeholders
-                    with a comprehensive view of real-time CRM data trends, customer behavior, and performance metrics.
-                    Trained on over 70 use cases of Salesforce Analytics Query Language and Bindings.</p>
-            </div>
-
-            <div class="card">
-                <h6>K.J. Somaiya College of Engineering, Mumbai — Research Intern<span>Jun 2022 - Dec 2022</span></h6>
-                <p>Conducted thorough literature survey on challenges in recommendation systems, focusing on privacy
-                    preservation and cold start scenarios in the federated learning domain and utilized PyTorch and CUDA
-                    for implementation. Created a graph neural network utilizing attention mechanisms to enhance the
-                    effectiveness of indirect interactions. Presented findings at the academic conference, contributing
-                    to the advancement of privacy-preserving machine learning in recommender systems.</p>
-            </div>
-
-            <div class="card">
-                <h6>Zebpay, Mumbai — Technical Intern <span>Oct 2021 - Mar 2022</span></h6>
-                <p>Automated the generation of reports by tracking instances and other resources on AWS to eliminate
-                    almost 100% unnecessary usage. Auto-tagging of resources with comments to document and analyze
-                    requirements. Created custom REST APIs using Python FastAPI, Postman, and Redis caching to get
-                    real-time cryptocurrency prices in different currencies and integrated functionality with a slack
-                    bot for ease of use.</p>
-            </div>
-        </div>
-        <div id="projects" class="section">
-            <h2>Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <!-- <div class="project-link">Link</div> -->
-                    <h3>Real-Time Surveillance & Object Detection</h3>
-                    <p>Designed a privacy-preserving surveillance framework using YOLOv7 and Faster R-CNN under a
-                        federated learning setup to reduce data centralization and model training communication
-                        overhead. Implemented TCP-based client-server communication and integrated Secure Multi-Party
-                        Computation (SMPC). Utilized AWS SageMaker, PyTorch, and WanDB for scalable experimentation and
-                        result tracking.</p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">
+                        <span>Get in touch</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="assets/Resume_Dhairya_Ameria.pdf" target="_blank" class="btn btn-secondary">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Resume</span>
+                    </a>
                 </div>
-
-                <div class="project-card">
-                    <!-- <div class="project-link">Link</div> -->
-                    <h3>Privacy Preserving Distributed Learning based Recommendation System</h3>
-                    <p>Developed a recommendation system based on the federated learning architecture, solving
-                        challenges associated with data privacy and protection. Conducted a comprehensive literature
-                        survey to develop the client-server cluster and employed WanDB for experiment tracking and
-                        visualization.</p>
-                </div>
-
-                <div class="project-card">
-                    <!-- <div class="project-link">Link</div> -->
-                    <h3>Savant - All in One Research Assistant</h3>
-                    <p>Devised a comprehensive virtual research assistant system to address the common challenges of
-                        time-consuming and tedious paper reading and research processes, offering a solution to make
-                        research more accessible. Leveraged a technology stack including MongoDB, React, NodeJS,
-                        Express.js, and Material UI to create an efficient, powerful, and collaborative platform for
-                        streamlined research for students and researchers. Achieved top 10 ranking out of the 160+ teams
-                        at the national-level hackathon, KJSCE Hack 7, and selected for incubation by Riidl - Research
-                        Innovation Incubation Design Labs, a prominent technology incubator, Cohort 2023.</p>
-                </div>
-
-                <div class="project-card">
-                    <!-- <div class="project-link">Link</div> -->
-                    <h3>SafeSocial - A Chrome Extension</h3>
-                    <p>Developed a Chrome extension used to block hateful and offensive comments on social media sites
-                        like Youtube and X using manifest version 3 and NLP model leveraging Keras and TensorFlow
-                        modules of Python.</p>
-                </div>
-
-                <div class="project-card">
-                    <!-- <div class="project-link">Link</div> -->
-                    <h3>Rialto - Personalized Banking System with the help of predictive analysis</h3>
-                    <p>Built a personalized banking system using NextJS, ExpressJS MongoDB, Python, and Flask to help
-                        financial service providers identify the most relevant financial products for their customers.
-                        Created machine learning models for credit risk analysis, churn model, and demographic-related
-                        sales prediction to provide "next best action" in the form of a personalized report.</p>
-                </div>
-
-                <div class="project-card">
-                    <!-- <div class="project-link">Link</div> -->
-                    <h3>Tableau Dashboard - Clinical Data Analysis</h3>
-                    <p>Designed a Tableau storyboard analyzing a dataset representing 10 years of diabetic clinical care
-                        at 130 US hospitals and derived reasonable conclusions.</p>
+                <div class="hero-social">
+                    <a href="https://github.com/dhairyaameria" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/dhairyaameria" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=b8-n9qIAAAAJ&hl=en&authuser=1" target="_blank" aria-label="Google Scholar">
+                        <i class="fas fa-graduation-cap"></i>
+                    </a>
+                    <a href="mailto:ameria9@seas.upenn.edu" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
                 </div>
             </div>
-        </div>
-        <div id="skills" class="section">
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Languages</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">HTML</span>
-                        <span class="skill-tag">CSS</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">TypeScript</span>
-                    </div>
+            <div class="hero-image">
+                <div class="hero-image-wrapper">
+                    <img src="assets/profile-photo.jpg" alt="Dhairya Ameria">
+                    <div class="hero-image-border"></div>
                 </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
 
-                <div class="skill-category">
-                    <h3>Frameworks/Libraries</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Spring Boot</span>
-                        <span class="skill-tag">NodeJS</span>
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">NextJS</span>
-                        <span class="skill-tag">ExpressJS</span>
-                        <span class="skill-tag">Flask</span>
-                        <span class="skill-tag">TensorFlow</span>
-                        <span class="skill-tag">Keras</span>
-                        <span class="skill-tag">Scikit-learn</span>
-                        <span class="skill-tag">Pandas</span>
-                        <span class="skill-tag">NumPy</span>
-                        <span class="skill-tag">OpenCV</span>
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">Streamlit</span>
-                        <span class="skill-tag">Bootstrap</span>
-                    </div>
+        <section class="about" id="about">
+            <div class="container">
+                <span class="section-label">About Me</span>
+                <h2 class="section-title">Building <span class="gradient-text">privacy-preserving</span> AI systems</h2>
+                <div class="about-content">
+                    <div class="about-text">
+
+                        <p>I'm a Master's student at <strong>Penn Engineering</strong> passionate about building at the intersection of <strong>AI, systems, and real-world impact</strong>. My research background in privacy-preserving ML and federated learning gives me a unique lens. I care deeply about building AI that's not just powerful, but trustworthy.</p>
+                        <p>My experience spans <strong>data analytics</strong>, full-stack and production-grade <strong>software development</strong>, and applied <strong>ML research</strong>. From shipping real systems at JPMorganChase to publishing federated learning work at IEEE conferences. I thrive in fast-paced environments, love tackling hard problems and am at my best when moving quickly from idea to working product.</p>
+                        <p>Right now, I'm <strong>actively looking for Summer 2026 internships</strong> in AI/ML engineering, applied research, or full-stack roles. I'm also genuinely excited to connect with founders and builders whether you're early-stage or just exploring an idea, I'd love to collaborate on something ambitious.</p>
+                       </div>
+                    <!-- <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">IEEE Publications</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">3.94</span>
+                            <span class="stat-label">CGPA</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">75+</span>
+                            <span class="stat-label">Jira Stories Closed</span>
+                        </div>
+                    </div> -->
                 </div>
-
-                <div class="skill-category">
-                    <h3>Tools & Platforms</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Jenkins</span>
-                        <span class="skill-tag">Maven</span>
-                        <span class="skill-tag">Gradle</span>
-                        <span class="skill-tag">Jupyter</span>
-                        <span class="skill-tag">Tableau</span>
-                        <span class="skill-tag">Salesforce CRM</span>
-                        <span class="skill-tag">VS Code</span>
-                        <span class="skill-tag">Google Colab</span>
-                        <span class="skill-tag">Postman</span>
-                        <span class="skill-tag">LaTeX</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Cloud & Databases</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Firebase</span>
-                        <span class="skill-tag">AWS EC2</span>
-                        <span class="skill-tag">AWS S3</span>
-                        <span class="skill-tag">AWS RDS</span>
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">MongoDB</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>ML & Privacy Techniques</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Federated Learning</span>
-                        <span class="skill-tag">Local Differential Privacy</span>
-                        <span class="skill-tag">Secure Multi-Party Computation (SMPC)</span>
+                <div class="skills-section">
+                    <h3>Technologies I work with</h3>
+                    <div class="skills-grid">
+                        <div class="skill-group featured">
+                            <span class="skill-group-title">AI/ML & Privacy</span>
+                            <div class="skill-tags">
+                                <span>Federated Learning</span><span>Differential Privacy</span><span>RAG</span><span>LLMs</span><span>Computer Vision</span>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <span class="skill-group-title">ML Frameworks</span>
+                            <div class="skill-tags">
+                                <span>PyTorch</span><span>TensorFlow</span><span>Keras</span><span>Scikit-learn</span><span>OpenCV</span>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <span class="skill-group-title">Languages</span>
+                            <div class="skill-tags">
+                                <span>Python</span><span>Java</span><span>TypeScript</span><span>C/C++</span><span>SQL</span><span>JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <span class="skill-group-title">Cloud & Infrastructure</span>
+                            <div class="skill-tags">
+                                <span>AWS SageMaker</span><span>Docker</span><span>AWS EC2</span><span>MongoDB</span><span>MySQL</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div id="certifications" class="section">
-            <h2>Certifications</h2>
-            <div class="card">
-                <p>
-                    <a href="https://coursera.org/share/6ad8c2c44aa4d69c2edf78283aa7b3be" target="_blank"
-                        class="cert-link">Mathematics for Machine Learning Specialization</a>
-                    <span>Imperial College London</span>
-                </p>
+        <section class="experience" id="experience">
+            <div class="container">
+                <span class="section-label">Experience</span>
+                <h2 class="section-title">Where I've <span class="gradient-text">worked</span></h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div class="timeline-header-left">
+                                    <div class="company-logo">
+                                        <img src="assets/jpmc-dark.png" alt="JPMorganChase" class="logo-dark">
+                                        <img src="assets/jpmc-light.png" alt="JPMorganChase" class="logo-light">
+                                    </div>
+                                    <div>
+                                        <h3>Software Engineer</h3>
+                                        <span class="company">JPMorganChase</span>
+                                    </div>
+                                </div>
+                                <span class="date">Aug 2024 — Jul 2025</span>
+                            </div>
+                            <p>Won 1st place in internal hackathon building an NL-to-SQL generator using LLMs and prompt engineering. Leading AWS cloud migration and API integrations with new vendors.</p>
+                            <div class="timeline-tags">
+                                <span>LLM</span><span>NLP</span><span>AWS</span><span>Prompt Engineering</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div class="timeline-header-left">
+                                    <div class="company-logo">
+                                        <img src="assets/jpmc-dark.png" alt="JPMorganChase" class="logo-dark">
+                                        <img src="assets/jpmc-light.png" alt="JPMorganChase" class="logo-light">
+                                    </div>
+                                    <div>
+                                        <h3>Software Engineer Intern</h3>
+                                        <span class="company">JPMorganChase</span>
+                                    </div>
+                                </div>
+                                <span class="date">Jan — Jul 2024</span>
+                            </div>
+                            <p>Built report scheduler dashboard and enhanced reporting module. Conducted LLM onboarding sessions. Closed 75+ Jira stories and handled 6 independent production releases.</p>
+                            <div class="timeline-tags">
+                                <span>Full Stack</span><span>Dashboard</span><span>Production</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div class="timeline-header-left">
+                                    <div class="company-logo">
+                                        <img src="assets/nasdaq-dark.png" alt="Nasdaq" class="logo-dark">
+                                        <img src="assets/nasdaq-light.png" alt="Nasdaq" class="logo-light">
+                                    </div>
+                                    <div>
+                                        <h3>Software Development Intern</h3>
+                                        <span class="company">Nasdaq</span>
+                                    </div>
+                                </div>
+                                <span class="date">Jun — Dec 2023</span>
+                            </div>
+                            <p>Built predictive models for contract risk using Salesforce data. Designed interactive CRM Analytics dashboards. Trained on 70+ SAQL use cases.</p>
+                            <div class="timeline-tags">
+                                <span>Salesforce</span><span>ML</span><span>Analytics</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div class="timeline-header-left">
+                                    <div class="company-logo">
+                                        <img src="assets/kj.png" alt="Somaiya" class="logo-dark">
+                                        <img src="assets/kj.png" alt="Somaiya" class="logo-light">
+                                    </div>
+                                    <div>
+                                        <h3>Research Intern</h3>
+                                        <span class="company">K.J. Somaiya College</span>
+                                    </div>
+                                </div>
+                                <span class="date">Jun — Dec 2022</span>
+                            </div>
+                            <p>Researched privacy-preserving recommendation systems using federated learning. Built graph neural networks with attention mechanisms. Published findings at IEEE conference.</p>
+                            <div class="timeline-tags">
+                                <span>Federated Learning</span><span>PyTorch</span><span>Research</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div class="timeline-header-left">
+                                    <div class="company-logo">
+                                        <img src="assets/zebpay-dark.png" alt="Zebpay" class="logo-dark">
+                                        <img src="assets/zebpay-light.png" alt="Zebpay" class="logo-light">
+                                    </div>
+                                    <div>
+                                        <h3>Technical Intern</h3>
+                                        <span class="company">Zebpay</span>
+                                    </div>
+                                </div>
+                                <span class="date">Oct 2021 — Mar 2022</span>
+                            </div>
+                            <p>Automated AWS resource tracking reports eliminating 100% unnecessary usage. Built REST APIs with FastAPI and Redis for real-time crypto prices with Slack bot integration.</p>
+                            <div class="timeline-tags">
+                                <span>AWS</span><span>FastAPI</span><span>Redis</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="card">
-                <p>
-                    <a href="https://coursera.org/share/86f8988de7d343173e9ecac4efdfbac8" target="_blank"
-                        class="cert-link">Object-Oriented Data Structures in C++</a>
-                    <span>University of Illinois Urbana-Champaign</span>
-                </p>
-            </div>
-            <div class="card">
-                <p>
-                    <a href="https://coursera.org/share/d04e8e5974d0d5b4e2244e10eb839de4" target="_blank"
-                        class="cert-link">TensorFlow Developer Specialization</a>
-                    <span>DeepLearning.AI</span>
-                </p>
-            </div>
-            <div class="card">
-                <p>
-                    <a href="https://coursera.org/share/7e9fb818aa3ceaedeb49f379dcf7ed51" target="_blank"
-                        class="cert-link">Analytics for Decision Making</a>
-                    <span>University of Minnesota</span>
-                </p>
-            </div>
-            <div class="card">
-                <p>
-                    <a href="https://coursera.org/share/c44180cc1a932f09a5e1c438f7ce4eb1" target="_blank"
-                        class="cert-link">AWS Cloud Technical Essentials</a>
-                    <span>Amazon Web Services</span>
-                </p>
-            </div>
-        </div>
+        </section>
 
-        <div id="publications" class="section">
-            <h2>Publications</h2>
-            <div class="card">
-                <h6>
-                    <span class="publication-title">A Comprehensive Analysis of Inference Attacks in Federated
-                        Learning</span>
-                    <span class="venue">IEEE PuneCon 2023</span>
-                </h6>
-                <p>
-                    D. Ameria, U. Kumar and S. Sankhe
-                </p>
+        <section class="education" id="education">
+            <div class="container">
+                <span class="section-label">Education</span>
+                <h2 class="section-title">Academic <span class="gradient-text">journey</span></h2>
+                <div class="education-grid">
+                    <div class="education-card featured">
+                        <div class="education-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="education-info">
+                            <span class="education-date">Aug 2025 - May 2027</span>
+                            <h3>University of Pennsylvania</h3>
+                            <p>Master's in Computer and Information Sciences</p>
+                            <span class="education-gpa">CGPA: 3.7</span>
+                            <span class="education-location">Philadelphia, USA</span>
+                        </div>
+                    </div>
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="education-info">
+                            <span class="education-date">Jun 2020 — May 2024</span>
+                            <h3>K.J. Somaiya College of Engineering</h3>
+                            <p>B.Tech in Computer Engineering</p>
+                            <span class="education-gpa">CGPA: 3.94</span>
+                            <span class="education-location">Mumbai, India</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="card">
-                <h6>
-                    <span class="publication-title">Blockchain-based Personalized Federated Learning leveraging the SMPC
-                        protocol</span>
-                    <span class="venue">IEEE ICCST 2023</span>
-                </h6>
-                <p>
-                    S. Dhumale, D. Ameria and S. Shukla
-                </p>
-            </div>
-            <div class="card">
-                <h6>
-                    <span class="publication-title">MetaFRS - Federated Learning based Cold Start Recommendation System
-                        using Meta-Learning</span>
-                    <span class="venue">IEEE EASCT 2023</span>
-                </h6>
-                <p>
-                    U. Kumar, D. Ameria and P. Gupta
-                </p>
-            </div>
-            <div class="card">
-                <h6>
-                    <span class="publication-title">Preserving Privacy in Next Keyword Prediction using Federated
-                        Learning</span>
-                    <span class="venue">IEEE ICACIC 2023</span>
-                </h6>
-                <p>
-                    S. Tyagi, A. Pawar, U. Kumar and D. Ameria
-                </p>
-            </div>
-        </div>
+        </section>
 
-        <div id="extracurricular" class="section">
-            <h2>Extracurricular Activities</h2>
-            <div class="card">
-                <p>
-                    Secured 1st Prize at the national-level hackathon Hackerstellar, organized by CSI
-                    Student's Chapter at KJSCE, developing SpaceVest, a sustainable investment platform
-                    promoting eco-friendly investment options and services.
-                </p>
+        <section class="projects" id="projects">
+            <div class="container">
+                <span class="section-label">Projects</span>
+                <h2 class="section-title">Featured <span class="gradient-text">projects</span></h2>
+                <div class="projects-grid">
+                    <a href="https://github.com/dhairyaameria/federated-medical-rag" target="_blank" class="project-card large">
+                        <div class="project-content">
+                            <span class="project-category">Federated Learning + RAG</span>
+                            <h3>Federated Medical RAG</h3>
+                            <p>Privacy-preserving federated learning system for medical literature Q&A. Enables hospitals to collaboratively answer queries using Flower, Qdrant, and LangChain without sharing sensitive patient data. HIPAA-compliant with 3-5 sec response times.</p>
+                            <div class="project-tech">
+                                <span>Flower</span><span>LangChain</span><span>Claude</span><span>Qdrant</span><span>BioBERT</span>
+                            </div>
+                        </div>
+                        <div class="project-visual">
+                            <div class="project-icon"><i class="fas fa-hospital"></i></div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/dhairyaameria/FederatedRecSys" target="_blank" class="project-card">
+                        <div class="project-content">
+                            <span class="project-category">Federated Learning + Research</span>
+                            <h3>FederatedRecSys</h3>
+                            <p>Privacy-preserving recommendation system using FedScope architecture with FedME and FedEM algorithms. Solves cold-start problem with meta-learning.</p>
+                            <div class="project-tech">
+                                <span>PyTorch</span><span>FedScope</span><span>WanDB</span>
+                            </div>
+                        </div>
+                    </a>
+                    <article class="project-card">
+                        <div class="project-content">
+                            <span class="project-category">Systems Programming</span>
+                            <h3>PennOS</h3>
+                            <p>Unix-like OS in C with priority scheduler, system calls, and thread-based process model. Features FAT-style file system and shell supporting POSIX-like operations, pipelines, and I/O redirection.</p>
+                            <div class="project-tech">
+                                <span>C</span><span>Unix</span><span>FAT</span><span>POSIX</span>
+                            </div>
+                        </div>
+                    </article>
+                    <a href="https://github.com/dhairyaameria/Savant" target="_blank" class="project-card">
+                        <div class="project-content">
+                            <span class="project-category">Full Stack + NLP</span>
+                            <h3>Savant - Research Assistant</h3>
+                            <p>Comprehensive virtual research assistant with collaborative workspaces, in-browser PDF viewer, annotator, and AI-powered summarization. Top 10 at KJSCE Hack 7.</p>
+                            <div class="project-tech">
+                                <span>React</span><span>Node.js</span><span>MongoDB</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/dhairyaameria/SafeSocial" target="_blank" class="project-card">
+                        <div class="project-content">
+                            <span class="project-category">NLP + Chrome Extension</span>
+                            <h3>SafeSocial</h3>
+                            <p>Chrome extension that blocks hateful and offensive comments on YouTube and Twitter using NLP-based toxicity detection with TensorFlow and FastAPI.</p>
+                            <div class="project-tech">
+                                <span>TensorFlow</span><span>FastAPI</span><span>Chrome V3</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/dhairyaameria/Rialto" target="_blank" class="project-card">
+                        <div class="project-content">
+                            <span class="project-category">ML + FinTech</span>
+                            <h3>Rialto - Smart Banking</h3>
+                            <p>Personalized banking system with ML models for credit risk scoring, churn prediction, and tailored product recommendations using Next.js and Firebase.</p>
+                            <div class="project-tech">
+                                <span>Next.js</span><span>Firebase</span><span>Scikit-learn</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/dhairyaameria/SpaceVest" target="_blank" class="project-card">
+                        <div class="project-content">
+                            <span class="project-category">Full Stack + Mobile</span>
+                            <h3>SpaceVest</h3>
+                            <p>Futuristic sustainable investment platform promoting ESG investments with portfolio generation and advisory for both companies and investors.</p>
+                            <div class="project-tech">
+                                <span>Flutter</span><span>Firebase</span><span>MongoDB</span><span>Material-UI</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/dhairyaameria/HeraHealth-Shehacks" target="_blank" class="project-card">
+                        <div class="project-content">
+                            <span class="project-category">ML + Healthcare</span>
+                            <h3>HeraHealth</h3>
+                            <p>Disease prediction system for breast and cervical cancer detection using Logistic Regression and Random Forests. Built at SheHacks hackathon.</p>
+                            <div class="project-tech">
+                                <span>Python</span><span>Flask</span><span>Scikit-learn</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
-            <div class="card">
-                <p>
-                    Volunteered for The Schools Challenge, a program by JPMorganChase and Agastya
-                    International Foundation, mentoring underprivileged students to build a solution to detect paddy
-                    plant diseases.
-                </p>
+        </section>
+
+        <section class="publications" id="publications">
+            <div class="container">
+                <span class="section-label">Research</span>
+                <h2 class="section-title">Published <span class="gradient-text">work</span></h2>
+                <div class="publications-list">
+                    <a href="https://ieeexplore.ieee.org/abstract/document/10450123" target="_blank" class="publication-card">
+                        <div class="publication-venue">IEEE PuneCon 2023</div>
+                        <h3>A Comprehensive Analysis of Inference Attacks in Federated Learning</h3>
+                        <p class="publication-description">Investigates vulnerabilities in Federated Learning protocols, exploring inference attacks and proposing mitigation strategies to enhance privacy and security.</p>
+                        <p class="publication-authors">D. Ameria, U. Kumar, S. Sankhe</p>
+                        <i class="fas fa-external-link-alt publication-link-icon"></i>
+                    </a>
+                    <a href="https://ieeexplore.ieee.org/abstract/document/10726855" target="_blank" class="publication-card">
+                        <div class="publication-venue">IEEE ICCST 2023</div>
+                        <h3>Blockchain-Based Personalized Federated Learning Leveraging the SMPC Protocol</h3>
+                        <p class="publication-description">Integrates Blockchain with FL using SMPC encryption, Committee Consensus Mechanism, smart contracts, and IPFS for secure personalized healthcare models.</p>
+                        <p class="publication-authors">S. Dhumale, D. Ameria, S. Shukla</p>
+                        <i class="fas fa-external-link-alt publication-link-icon"></i>
+                    </a>
+                    <a href="https://ieeexplore.ieee.org/abstract/document/10392700" target="_blank" class="publication-card">
+                        <div class="publication-venue">IEEE EASCT 2023</div>
+                        <h3>MetaFRS - Federated Learning based Cold Start Recommendation System using Meta-Learning</h3>
+                        <p class="publication-description">Proposes Graph Federated Learning with attention mechanisms and meta-learning to address cold start scenarios while preserving user privacy.</p>
+                        <p class="publication-authors">U. Kumar, D. Ameria, P. Gupta</p>
+                        <i class="fas fa-external-link-alt publication-link-icon"></i>
+                    </a>
+                    <a href="https://ieeexplore.ieee.org/abstract/document/10435224" target="_blank" class="publication-card">
+                        <div class="publication-venue">IEEE ICACIC 2023</div>
+                        <h3>Privacy Preserving Distributed Learning based Recommendation System</h3>
+                        <p class="publication-description">Proposed FedScope Recommendation System (FRS) for next keyword prediction enabling personalized recommendations while preserving user privacy.</p>
+                        <p class="publication-authors">S. Tyagi, A. Pawar, U. Kumar, D. Ameria</p>
+                        <i class="fas fa-external-link-alt publication-link-icon"></i>
+                    </a>
+                </div>
             </div>
-            <div class="card">
-                <p>
-                    Provided basic reading and writing lessons to an uneducated house-help to help her navigate daily
-                    literacy needs as part of the CMCA volunteer activity.
-                </p>
+        </section>
+
+        <section class="spotlight" id="spotlight">
+            <div class="container">
+                <span class="section-label">Achievements</span>
+                <h2 class="section-title">Achievements & <span class="gradient-text">Impact</span></h2>
+                
+                <div class="spotlight-grid">
+
+                    <!-- LinkedIn Embeds / Featured Posts -->
+                    <div class="spotlight-category full-width">
+                        <h3 class="spotlight-category-title">
+                            <i class="fab fa-linkedin"></i>
+                            Featured Posts
+                        </h3>
+                        <div class="linkedin-carousel">
+                            <div class="carousel-container">
+                                <div class="carousel-track">
+                                    <div class="carousel-slide">
+                                        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7431027060308979712?collapsed=1" height="500" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+                                    </div>
+                                    <div class="carousel-slide">
+                                        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7368143019805499392?collapsed=1" height="500" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+                                    </div>
+                                    <div class="carousel-slide">
+                                        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7092178659381321728?collapsed=1" height="500" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+                                    </div>
+                                    <div class="carousel-slide">
+                                        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7091799190342692865?collapsed=1"height="500" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+                                    </div>
+                                    <div class="carousel-slide">
+                                        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7055255675441979392?collapsed=1"height="500" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+                                    </div>
+                                    </div>
+                            <div class="carousel-controls">
+                                <button class="carousel-btn prev" aria-label="Previous">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <div class="carousel-dots"></div>
+                                <button class="carousel-btn next" aria-label="Next">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <!-- Competitions -->
+                    <div class="spotlight-category">
+                        <h3 class="spotlight-category-title">
+                            <i class="fas fa-trophy"></i>
+                            Competitions & Hackathons
+                        </h3>
+                        <div class="spotlight-cards">
+                            <div class="spotlight-card achievement">
+                                <div class="spotlight-badge">1st Place</div>
+                                <h4>Sepathon - JPMorganChase Internal Hackathon</h4>
+                                <p>Built an NL-to-SQL generator using LLMs and prompt engineering</p>
+                                <span class="spotlight-date">2024</span>
+                            </div>
+                            <div class="spotlight-card achievement">
+                                <div class="spotlight-badge">1st Place</div>
+                                <h4>Hackerstellar - National Hackathon</h4>
+                                <p>Developed SpaceVest, a sustainable investment platform promoting eco-friendly options</p>
+                                <span class="spotlight-date">2023</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Volunteer Work -->
+                    <div class="spotlight-category">
+                        <h3 class="spotlight-category-title">
+                            <i class="fas fa-heart"></i>
+                            Volunteer & Leadership
+                        </h3>
+                        <div class="spotlight-cards">
+                            <div class="spotlight-card volunteer">
+                                <h4>The Schools Challenge - JPMC & Agastya Foundation</h4>
+                                <p>Mentored underprivileged students to build a solution for detecting paddy plant diseases</p>
+                                <span class="spotlight-date">2024</span>
+                            </div>
+                            <div class="spotlight-card volunteer">
+                                <h4>Somaiya Voices - Public Relations Lead</h4>
+                                <p>Led PR for the official student-run newspaper across 3 university campuses</p>
+                                <span class="spotlight-date">2022-2023</span>
+                            </div>
+                            <div class="spotlight-card volunteer">
+                                <h4>CMCA Literacy Initiative</h4>
+                                <p>Provided basic reading and writing lessons to help with daily literacy needs</p>
+                                <span class="spotlight-date">2021</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certifications -->
+                    <div class="spotlight-category full-width">
+                        <h3 class="spotlight-category-title">
+                            <i class="fas fa-certificate"></i>
+                            Certifications
+                        </h3>
+                        <div class="spotlight-cards certs">
+                            <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/KFFMZ7F785HW" target="_blank" class="spotlight-card cert">
+                                <div class="cert-preview">
+                                    <img src="assets/certs/tensorflow.png" alt="TensorFlow Developer Certificate">
+                                </div>
+                                <div class="cert-body">
+                                    <div class="cert-icon"><i class="fas fa-brain"></i></div>
+                                    <div class="cert-info">
+                                        <h4>TensorFlow Developer Specialization</h4>
+                                        <span>DeepLearning.AI</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="https://coursera.org/share/6ad8c2c44aa4d69c2edf78283aa7b3be" target="_blank" class="spotlight-card cert">
+                                <div class="cert-preview">
+                                    <img src="assets/certs/math-ml.png" alt="Mathematics for Machine Learning Certificate">
+                                </div>
+                                <div class="cert-body">
+                                    <div class="cert-icon"><i class="fas fa-calculator"></i></div>
+                                    <div class="cert-info">
+                                        <h4>Mathematics for Machine Learning</h4>
+                                        <span>Imperial College London</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="http://coursera.org/account/accomplishments/certificate/NV2BBELFQ49L" target="_blank" class="spotlight-card cert">
+                                <div class="cert-preview">
+                                    <img src="assets/certs/aws-essentials.png" alt="AWS Cloud Technical Essentials Certificate">
+                                </div>
+                                <div class="cert-body">
+                                    <div class="cert-icon"><i class="fab fa-aws"></i></div>
+                                    <div class="cert-info">
+                                        <h4>AWS Cloud Technical Essentials</h4>
+                                        <span>Amazon Web Services</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="https://coursera.org/share/86f8988de7d343173e9ecac4efdfbac8" target="_blank" class="spotlight-card cert">
+                                <div class="cert-preview">
+                                    <img src="assets/certs/cpp-uiuc.png" alt="C++ Data Structures Certificate">
+                                </div>
+                                <div class="cert-body">
+                                    <div class="cert-icon"><i class="fas fa-code"></i></div>
+                                    <div class="cert-info">
+                                        <h4>Object-Oriented Data Structures in C++</h4>
+                                        <span>UIUC</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/SJMAFLP5SZ4U" target="_blank" class="spotlight-card cert">
+                                <div class="cert-preview">
+                                    <img src="assets/certs/analytics.png" alt="Analytics for Decision Making Certificate">
+                                </div>
+                                <div class="cert-body">
+                                    <div class="cert-icon"><i class="fas fa-chart-line"></i></div>
+                                    <div class="cert-info">
+                                        <h4>Analytics for Decision Making</h4>
+                                        <span>University of Minnesota</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="https://www.credly.com/badges/ff75cd07488342b09ba24061a045bb95" target="_blank" class="spotlight-card cert">
+                                <div class="cert-preview">
+                                    <img src="assets/certs/aws-practitioner.png" alt="AWS Cloud Practitioner Certificate">
+                                </div>
+                                <div class="cert-body">
+                                    <div class="cert-icon"><i class="fab fa-aws"></i></div>
+                                    <div class="cert-info">
+                                        <h4>AWS Cloud Practitioner</h4>
+                                        <span>Amazon Web Services</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
             </div>
-            <div class="card">
-                <p>
-                    Led public relations for Somaiya Voices, the official student-run newspaper of the
-                    university spread across 3 campuses.
-                </p>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="container">
+                <span class="section-label">Contact</span>
+                <h2 class="section-title">Let's <span class="gradient-text">connect</span></h2>
+                <p class="contact-text">I'm always interested in hearing about new opportunities, research collaborations, or just having a chat about technology and privacy.</p>
+                
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/mjgavjpb" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+                    </div>
+                    <input type="hidden" name="_subject" id="formSubject">
+                    <button type="submit" class="btn btn-primary btn-large">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Send Message</span>
+                    </button>
+                </form>
+
+                <div class="contact-divider">
+                    <span>or reach out directly</span>
+                </div>
+
+                <div class="contact-links">
+                    <a href="mailto:ameria9@seas.upenn.edu">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email</span>
+                    </a>
+                    <a href="https://github.com/dhairyaameria" target="_blank">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/dhairyaameria" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=b8-n9qIAAAAJ&hl=en&authuser=1" target="_blank">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Scholar</span>
+                    </a>
+                </div>
             </div>
-            <div class="card">
-                <p>
-                    Participated in over 10 national-level hackathons and secured top 10 positions in more than 3.
-                </p>
-            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Designed & Built by Dhairya Ameria</p>
+            <p class="footer-year">2025</p>
         </div>
-    </div>
+    </footer>
+
     <script>
-        function showSection(sectionId) {
-            // Update sections
-            document.querySelectorAll('.section').forEach(section => {
-                section.classList.remove('active');
-            });
-            document.getElementById(sectionId).classList.add('active');
+        // Custom cursor
+        const cursor = document.querySelector('.cursor');
+        const follower = document.querySelector('.cursor-follower');
+        let mouseX = 0, mouseY = 0, posX = 0, posY = 0;
 
-            // Update buttons
-            document.querySelectorAll('.tab-button').forEach(button => {
-                button.classList.remove('active');
-            });
-            document.querySelectorAll('.tab-button').forEach(button => {
-                if (button.getAttribute('onclick').includes(sectionId)) {
-                    button.classList.add('active');
-                }
-            });
-
-            // Update dropdown
-            document.querySelector('.tab-dropdown').value = sectionId;
-
-            // Scroll to section
-            // document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-
-        // Check for window resize to handle tab visibility
-        window.addEventListener('resize', function () {
-            const width = window.innerWidth;
-            const tabButtons = document.querySelector('.tab-buttons');
-            const tabDropdown = document.querySelector('.tab-dropdown');
-
-            if (width <= 768) {
-                tabButtons.style.display = 'none';
-                tabDropdown.style.display = 'block';
-            } else {
-                tabButtons.style.display = 'flex';
-                tabDropdown.style.display = 'none';
-            }
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            cursor.style.left = mouseX + 'px';
+            cursor.style.top = mouseY + 'px';
         });
 
-        // Call resize handler on load
-        window.dispatchEvent(new Event('resize'));
+        function animate() {
+            posX += (mouseX - posX) * 0.1;
+            posY += (mouseY - posY) * 0.1;
+            follower.style.left = posX + 'px';
+            follower.style.top = posY + 'px';
+            requestAnimationFrame(animate);
+        }
+        animate();
 
-        // Theme toggle functionality
-        (function () {
-            const themeToggle = document.getElementById('theme-toggle');
-            const htmlElement = document.documentElement;
+        // Cursor hover effects
+        document.querySelectorAll('a, button, .project-card').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('cursor-hover');
+                follower.classList.add('cursor-hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('cursor-hover');
+                follower.classList.remove('cursor-hover');
+            });
+        });
 
-            // Check for saved theme preference or use preferred color scheme
+        // Mobile nav toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+
+        // Scroll animations
+        const observerOptions = { threshold: 0.1, rootMargin: '-50px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.timeline-item, .project-card, .publication-card, .education-card, .stat, .skill-group, .spotlight-card, .spotlight-category').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Navbar scroll effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+            
+            if (currentScroll > lastScroll && currentScroll > 500) {
+                nav.classList.add('hidden');
+            } else {
+                nav.classList.remove('hidden');
+            }
+            lastScroll = currentScroll;
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    navLinks.classList.remove('active');
+                    navToggle.classList.remove('active');
+                }
+            });
+        });
+
+        // Hero animation on load
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+
+        // Theme toggle
+        (function() {
+            const toggle = document.getElementById('theme-toggle');
+            const html = document.documentElement;
+            
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme) {
-                htmlElement.setAttribute('data-theme', savedTheme);
-                themeToggle.checked = savedTheme === 'dark';
-            } else {
-                // Use system preference as default
-                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                if (prefersDark) {
-                    htmlElement.setAttribute('data-theme', 'dark');
-                    themeToggle.checked = true;
+                html.setAttribute('data-theme', savedTheme);
+            } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+                html.setAttribute('data-theme', 'light');
+            }
+            
+            toggle.addEventListener('click', () => {
+                const current = html.getAttribute('data-theme');
+                const next = current === 'light' ? 'dark' : 'light';
+                html.setAttribute('data-theme', next);
+                localStorage.setItem('theme', next);
+            });
+        })();
+
+        // LinkedIn Carousel
+        (function() {
+            const carousel = document.querySelector('.linkedin-carousel');
+            const track = document.querySelector('.carousel-track');
+            const slides = document.querySelectorAll('.carousel-slide');
+            const prevBtn = document.querySelector('.carousel-btn.prev');
+            const nextBtn = document.querySelector('.carousel-btn.next');
+            const dotsContainer = document.querySelector('.carousel-dots');
+            
+            if (!track || slides.length === 0) return;
+
+            let currentIndex = 0;
+            let slidesPerView = window.innerWidth > 900 ? 2 : 1;
+            const totalSlides = slides.length;
+            let maxIndex = Math.max(0, totalSlides - slidesPerView);
+            let autoPlayInterval;
+            const autoPlayDelay = 4000; // 4 seconds
+
+            // Create dots
+            function createDots() {
+                dotsContainer.innerHTML = '';
+                maxIndex = Math.max(0, totalSlides - slidesPerView);
+                for (let i = 0; i <= maxIndex; i++) {
+                    const dot = document.createElement('div');
+                    dot.classList.add('carousel-dot');
+                    if (i === currentIndex) dot.classList.add('active');
+                    dot.addEventListener('click', () => {
+                        goToSlide(i);
+                        resetAutoPlay();
+                    });
+                    dotsContainer.appendChild(dot);
                 }
             }
 
-            // Handle theme toggle changes
-            themeToggle.addEventListener('change', function () {
-                if (this.checked) {
-                    htmlElement.setAttribute('data-theme', 'dark');
-                    localStorage.setItem('theme', 'dark');
+            function updateCarousel() {
+                const slideWidth = 100 / slidesPerView;
+                track.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+                
+                // Update dots
+                document.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+                    dot.classList.toggle('active', i === currentIndex);
+                });
+
+                // Update buttons
+                prevBtn.disabled = false;
+                nextBtn.disabled = false;
+            }
+
+            function goToSlide(index) {
+                maxIndex = Math.max(0, totalSlides - slidesPerView);
+                if (index > maxIndex) {
+                    currentIndex = 0;
+                } else if (index < 0) {
+                    currentIndex = maxIndex;
                 } else {
-                    htmlElement.setAttribute('data-theme', 'light');
-                    localStorage.setItem('theme', 'light');
+                    currentIndex = index;
+                }
+                updateCarousel();
+            }
+
+            function nextSlide() {
+                goToSlide(currentIndex + 1);
+            }
+
+            function prevSlide() {
+                goToSlide(currentIndex - 1);
+            }
+
+            // Auto-play
+            function startAutoPlay() {
+                autoPlayInterval = setInterval(nextSlide, autoPlayDelay);
+            }
+
+            function stopAutoPlay() {
+                clearInterval(autoPlayInterval);
+            }
+
+            function resetAutoPlay() {
+                stopAutoPlay();
+                startAutoPlay();
+            }
+
+            // Pause on hover
+            carousel.addEventListener('mouseenter', stopAutoPlay);
+            carousel.addEventListener('mouseleave', startAutoPlay);
+
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                resetAutoPlay();
+            });
+            
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                resetAutoPlay();
+            });
+
+            // Handle resize
+            window.addEventListener('resize', () => {
+                const newSlidesPerView = window.innerWidth > 900 ? 2 : 1;
+                if (newSlidesPerView !== slidesPerView) {
+                    slidesPerView = newSlidesPerView;
+                    currentIndex = 0;
+                    createDots();
+                    updateCarousel();
                 }
             });
+
+            createDots();
+            updateCarousel();
+            startAutoPlay();
         })();
+
+        // Contact Form - Format subject before submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            const name = document.getElementById('name').value;
+            const subject = document.getElementById('subject').value;
+            
+            // Format: [Portfolio] Subject - from Name
+            const formattedSubject = `[Portfolio] ${subject} - from ${name}`;
+            document.getElementById('formSubject').value = formattedSubject;
+        });
     </script>
 </body>
-
 </html>
